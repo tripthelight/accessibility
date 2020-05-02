@@ -50,9 +50,7 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {
-      "no-inferrable-types": [false]
-    }
+    "rules": {}
   },
   "browserslist": [
     "> 1%",
