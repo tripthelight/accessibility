@@ -12,7 +12,7 @@
   padding: 24px 24px 74px 24px;
   .navSub {
     padding: 20px 0 0 0;
-    a {
+    span {
       display: inline-block;
     }
   }
