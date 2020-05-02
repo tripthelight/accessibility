@@ -1,7 +1,7 @@
 <template>
   <div class="aria-checked">
     <h4>aria-checked</h4>
-    <div>
+    <div class="formWrap">
       <input type="checkbox" role="checkbox" id="chk01" :aria-checked="thisChecked===true?'true':'false'" @click="clickEvt" />
       <label for="chk01">aria-checked</label>
     </div>
@@ -32,3 +32,15 @@ export default class AriaChecked extends Vue {
   }
 }
 </script>
+
+<style lang="scss">
+.aria-checked {
+  padding: 24px 24px 74px 24px;
+  .formWrap {
+    padding: 20px 0;
+    input[type="checkbox"] {
+      font-size: 20px;
+    }
+  }
+}
+</style>

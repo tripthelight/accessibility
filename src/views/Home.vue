@@ -14,3 +14,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.home {
+  padding: 24px 24px 74px 24px;
+}
+</style>
