@@ -1,6 +1,6 @@
 <template>
   <div class="aria-checked">
-    <h4>Aria-checked</h4>
+    <h4>aria-checked</h4>
     <div>
       <input type="checkbox" role="checkbox" id="chk01" :aria-checked="thisChecked===true?'true':'false'" @click="clickEvt" />
       <label for="chk01">aria-checked</label>
