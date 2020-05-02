@@ -3,6 +3,9 @@
   margin: 0;
   touch-action: manipulation;
 }
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
+}
 a {
   font-style: normal;
   text-decoration: none;
