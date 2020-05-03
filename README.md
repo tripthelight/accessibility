@@ -7,7 +7,7 @@ https://tripthelight.github.io/accessibility/
 
 ## Infomation
 ```
-Describes the aria sequel of web accessibility used in mobile web made with vue cli
+Describes the aria property of web accessibility used in mobile web made with vue cli
 ```
 
 ## Skills
