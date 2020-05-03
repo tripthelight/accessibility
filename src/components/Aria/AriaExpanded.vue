@@ -11,8 +11,8 @@
         aria-expanded : {{ thisExpanded }}
         <span class="icoArr" aria-label="arrow icon"></span>
       </dt>
-      <dd>
-        <div class="hideWrap" :aria-hidden="thisExpanded?'false':'true'">
+      <dd :aria-hidden="thisExpanded?'false':'true'">
+        <div class="hideWrap">
           aria-hidden: {{ !thisExpanded }}<br>
           contents<br>
           contents<br>
@@ -47,8 +47,8 @@ export default class AriaExpanded extends Vue {
     aria-expanded : {{ thisExpanded }}
     <span class="icoArr" aria-label="arrow icon"></span>
   </dt>
-  <dd>
-    <div class="hideWrap" :aria-hidden="thisExpanded?'false':'true'">
+  <dd :aria-hidden="thisExpanded?'false':'true'">
+    <div class="hideWrap">
       contents<br>
       contents<br>
       contents<br>
