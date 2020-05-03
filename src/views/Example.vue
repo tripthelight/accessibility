@@ -1,9 +1,10 @@
 <template>
   <div class="example">
     <h4>Accessibility Example</h4>
-    <div class="navSub">
-      <span @click="$router.push({ path: 'ariaChecked' })">aria-checked &gt;</span>
-    </div>
+    <ul class="navSub">
+      <li><span @click="$router.push({ path: 'ariaChecked' })">aria-checked &gt;</span></li>
+      <li><span @click="$router.push({ path: 'ariaExpanded' })">aria-expanded &gt;</span></li>
+    </ul>
   </div>
 </template>
 
@@ -11,9 +12,14 @@
 .example {
   padding: 24px 24px 74px 24px;
   .navSub {
+    display: block;
     padding: 20px 0 0 0;
-    span {
-      display: inline-block;
+    li {
+      display: block;
+      padding: 5px 0;
+      span {
+        display: inline-block;
+      }
     }
   }
 }
