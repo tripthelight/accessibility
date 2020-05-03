@@ -2,7 +2,7 @@
   <div class="example">
     <h4>Accessibility Example</h4>
     <div class="navSub">
-      <span @click="$router.push({ path: 'ariaChecked' })">aria-checked</span>
+      <span @click="$router.push({ path: 'ariaChecked' })">aria-checked &gt;</span>
     </div>
   </div>
 </template>

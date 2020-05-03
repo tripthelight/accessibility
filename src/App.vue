@@ -1,12 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" v-if="!$route.meta.hideNav">
       <router-link to="/">Home</router-link>
       <router-link to="/example">Example</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+
+@Component({
+  name: 'App',
+  components: {}
+})
+
+export default class App extends Vue {
+}
+</script>
 
 <style lang="scss">
 #nav {

@@ -8,17 +8,20 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: { hideNav: false }
   },
   {
     path: '/example',
     name: 'Example',
-    component: () => import('../views/Example.vue')
+    component: () => import('../views/Example.vue'),
+    meta: { hideNav: false }
   },
   {
     path: '/ariaChecked',
     name: 'AriaChecked',
-    component: () => import('../components/AriaChecked/AriaChecked.vue')
+    component: () => import('../components/Aria/AriaChecked.vue'),
+    meta: { hideNav: true }
   }
 ]
 
