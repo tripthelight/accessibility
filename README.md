@@ -1,9 +1,7 @@
 # vue cli web accessibility
 
 ## url
-```
 [https://tripthelight.github.io/accessibility/](https://tripthelight.github.io/accessibility/)
-```
 
 ## Infomation
 ```
