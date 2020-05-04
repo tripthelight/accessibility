@@ -49,21 +49,33 @@ export default class AriaHaspopup extends Vue {
   private popupState = false
   private thisChecked = false
   private thisSelected = 'not selected'
-  private preDateHtml = `<input type="checkbox" role="checkbox" id="chk01" :aria-checked="thisChecked===true?'true':'false'" @click="clickEvt" />
-<label for="chk01">aria-checked</label>`
-  private preDateJs = `private thisChecked: boolean = false
-private clickEvt () {
-  this.thisChecked = !this.thisChecked
-}`
+  private preDateHtml = `<div class="btnOpenPopup" role="button" aria-haspopup="true" aria-controls="thisPopup" :aria-expanded="popupState?'true':'false'" @click="popSta">OPEN POPUP BUTTON</div>
 
-  private clickEvt () {
-    this.thisChecked = !this.thisChecked
-    if (this.thisChecked) {
-      this.thisSelected = 'selected'
-    } else {
-      this.thisSelected = 'not selected'
-    }
-  }
+<div id="thisPopup" role="dialog" :class="['popup', popupState?'open':'close']">
+  <div class="dim" @click="popClose">Close popup when touched</div>
+  <div class="popWrap">
+    <div class="popHeader">
+      POP HEADER
+      <span class="btnClose" role="button" @click="popClose">close popup</span>
+    </div>
+    <div class="popContent">
+      POPUP CONTENT<br>
+      POPUP CONTENT<br>
+      POPUP CONTENT<br>
+      POPUP CONTENT<br>
+      POPUP CONTENT<br>
+      POPUP CONTENT<br>
+      POPUP CONTENT
+    </div>
+  </div>
+</div>`
+  private preDateJs = `private popSta () {
+  this.popupState = !this.popupState
+}
+
+private popClose () {
+  this.popupState = !this.popupState
+}`
 
   private popSta () {
     this.popupState = !this.popupState
