@@ -28,6 +28,12 @@ const routes: Array<RouteConfig> = [
     name: 'AriaExpanded',
     component: () => import('../components/Aria/AriaExpanded.vue'),
     meta: { hideNav: true }
+  },
+  {
+    path: '/ariaHaspopup',
+    name: 'AriaHaspopup',
+    component: () => import('../components/Aria/AriaHaspopup.vue'),
+    meta: { hideNav: true }
   }
 ]
 

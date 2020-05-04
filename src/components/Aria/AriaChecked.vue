@@ -1,6 +1,6 @@
 <template>
   <div class="aria-checked">
-    <span class="btnBack" @click="$router.push({ path: 'example' })" role="button" aria-label="move page">&lt; Go back</span>
+    <span class="btnBack" @click="$router.push({ path: 'example' })" role="link">&lt; Go back</span>
     <h3>aria-checked</h3>
     <div class="formWrap">
       <input type="checkbox" role="checkbox" id="chk01" :aria-checked="thisChecked===true?'true':'false'" @click="clickEvt" />

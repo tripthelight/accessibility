@@ -1,6 +1,6 @@
 <template>
   <div class="aria-expanded">
-    <span class="btnBack" @click="$router.push({ path: 'example' })" role="button" aria-label="move page">&lt; Go back</span>
+    <span class="btnBack" @click="$router.push({ path: 'example' })" role="link">&lt; Go back</span>
     <h3>aria-expanded</h3><br>
 
     <p>aria-expanded : <strong>{{ thisExpanded }}</strong></p>

@@ -4,6 +4,7 @@
     <ul class="navSub">
       <li><span @click="$router.push({ path: 'ariaChecked' })">aria-checked &gt;</span></li>
       <li><span @click="$router.push({ path: 'ariaExpanded' })">aria-expanded &gt;</span></li>
+      <li><span @click="$router.push({ path: 'ariaHaspopup' })">aria-haspopup &gt;</span></li>
     </ul>
   </div>
 </template>
