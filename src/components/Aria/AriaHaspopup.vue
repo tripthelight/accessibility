@@ -26,9 +26,6 @@
       </div>
     </div>
 
-    <p>aria-checked : <strong>{{ thisChecked }}</strong></p>
-    <p>screen reader say : <strong>{{ thisSelected }}</strong></p>
-
     <h4>HTML :</h4>
     <pre>{{ preDateHtml }}</pre>
 
@@ -47,8 +44,6 @@ import { Component, Vue } from 'vue-property-decorator'
 
 export default class AriaHaspopup extends Vue {
   private popupState = false
-  private thisChecked = false
-  private thisSelected = 'not selected'
   private preDateHtml = `<div class="btnOpenPopup" role="button" aria-haspopup="true" aria-controls="thisPopup" :aria-expanded="popupState?'true':'false'" @click="popSta">OPEN POPUP BUTTON</div>
 
 <div id="thisPopup" role="dialog" :class="['popup', popupState?'open':'close']">
