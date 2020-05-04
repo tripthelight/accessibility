@@ -2,6 +2,9 @@
 
 ## url
 [https://tripthelight.github.io/accessibility/](https://tripthelight.github.io/accessibility/)
+```
+We recommend that you watch it in Chrome Mobile Mode.
+```
 
 ## Infomation
 ```
