@@ -96,7 +96,8 @@ private popClose () {
     box-sizing: border-box;
     line-height: 6px;
     border-radius: 4px;
-    background-color: #E0E0E0;
+    background-color: #000;
+    color: #FFF;
   }
   .popup {
     display: none;
@@ -111,7 +112,7 @@ private popClose () {
       top: 0;
       z-index: 90;
       display: block;
-      background-color: rgba(0,0,0,0.4);
+      background-color: rgba(0,0,0,0.8);
       font-size: 0;
       text-indent: -1000px;
     }

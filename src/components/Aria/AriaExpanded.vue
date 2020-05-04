@@ -9,7 +9,9 @@
     <dl :class="['openClose', thisExpanded?'open':'close']">
       <dt role="button" :aria-expanded="thisExpanded?'true':'false'" @click="clickEvt">
         aria-expanded : {{ thisExpanded }}
-        <span class="icoArr" aria-label="arrow icon"></span>
+        <span class="icoArr" aria-label="arrow icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#FFF" viewBox="0 0 24 24"><path stroke="#FFF" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+        </span>
       </dt>
       <dd :aria-hidden="thisExpanded?'false':'true'">
         <div class="hideWrap">
@@ -80,7 +82,8 @@ private clickEvt () {
   overflow-x: hidden;
   .openClose {
     margin: 20px 0;
-    border: 1px solid #E0E0E0;
+    background-color: #000;
+    color: #FFF;
     border-radius: 6px;
     dt {
       position: relative;
@@ -88,16 +91,11 @@ private clickEvt () {
       .icoArr {
         position: absolute;
         display: inline-block;
-        right: 10px;
+        right: 16px;
         top: 50%;
-        width: 20px;
+        width: 12px;
         height: 12px;
         margin-top: -6px;
-        background-image: url('../../assets/images/icon/ico_arr_down_01.png');
-        background-color: transparent;
-        background-size: 100% auto;
-        background-repeat: no-repeat;
-        background-position: 0 0;
       }
     }
     dd {
@@ -111,6 +109,7 @@ private clickEvt () {
     &.open {
       dt {
         .icoArr {
+          transform-origin: center center;
           transform: rotate(180deg);
         }
       }
