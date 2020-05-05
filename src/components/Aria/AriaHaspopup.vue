@@ -1,6 +1,6 @@
 <template>
   <div class="aria-haspopup">
-    <div :tabindex="popupState?'-1':'1'">
+    <div>
       <span class="btnBack" @click="$router.push({ path: 'example' })" role="link">&lt; Go back</span>
       <h3>aria-haspopup</h3>
       <p class="otherBlock">Other aria properties</p>
@@ -17,7 +17,7 @@
     <div id="thisPopupWrap" role="dialog" aria-modal="true" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" :aria-hidden="popupState?'true':'false'" :class="['popup', popupState?'open':'close']">
       <div class="dim" @click="popClose">Close popup when touched</div>
       <div class="popWrap">
-        <div class="popHeader" id="dialog1Title" tabindex="0">
+        <div class="popHeader" id="dialog1Title" ref="popupRef">
           POP HEADER
         </div>
         <div class="popContent" id="dialog1Desc">
@@ -73,8 +73,13 @@ private popClose () {
   this.popupState = !this.popupState
 }`
 
+  public $refs!: {
+    popupRef: HTMLElement;
+  }
+
   private popSta () {
     this.popupState = !this.popupState
+    this.$refs.popupRef.focus()
   }
 
   private popClose () {
