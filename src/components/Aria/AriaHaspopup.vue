@@ -17,7 +17,7 @@
     <div id="thisPopupWrap" role="dialog" aria-modal="true" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" :aria-hidden="popupState?'false':'true'" :class="['popup', popupState?'open':'close']">
       <div class="dim" @click="popClose">Close popup when touched</div>
       <div class="popWrap">
-        <div class="popHeader" id="dialog1Title" ref="popupRef">
+        <div class="popHeader" id="dialog1Title">
           POP HEADER
         </div>
         <div class="popContent" id="dialog1Desc">
@@ -73,13 +73,13 @@ private popClose () {
   this.popupState = !this.popupState
 }`
 
-  public $refs!: {
-    popupRef: HTMLElement;
-  }
+  // public $refs!: {
+  //   popupRef: HTMLElement;
+  // }
 
   private popSta () {
     this.popupState = !this.popupState
-    this.$refs.popupRef.focus()
+    // this.$refs.popupRef.focus()
   }
 
   private popClose () {
