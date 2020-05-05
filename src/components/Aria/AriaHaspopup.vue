@@ -6,8 +6,8 @@
       <p class="otherBlock">Other aria properties</p>
       <p>aria-expanded<br>aria-controls<br>role="dialog"</p>
 
-      <div role="button" aria-controls="thisPopupWrap" aria-haspopup="dialog" :aria-expanded="popupState?'true':'false'" class="btnOpenPopup" @click="popSta">CLICK OPEN POPUP 2345</div>
-      <div id="thisPopupWrap" tabindex="-1" role="dialog" aria-modal="true" :class="['popup', popupState?'open':'close']">
+      <div role="button" aria-controls="thisPopupWrap" aria-haspopup="dialog" :aria-expanded="popupState?'true':'false'" class="btnOpenPopup" @click="popSta">CLICK OPEN POPUP 6767</div>
+      <div id="thisPopupWrap" aria-modal="true" :class="['popup', popupState?'open':'close']">
         <div class="dim" @click="popClose">Close popup when touched</div>
         <div class="popWrap">
           <div class="popHeader" id="dialog1Title" ref="popFocus">
@@ -81,6 +81,7 @@ private popClose () {
     this.popupState = !this.popupState
     this.$nextTick(() => {
       this.$refs.popFocus.focus()
+      this.$refs.popFocus.style.backgroundColor = '#FF0000'
     })
   }
 
