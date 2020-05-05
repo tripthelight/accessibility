@@ -6,11 +6,11 @@
       <p class="otherBlock">Other aria properties</p>
       <p>aria-expanded<br>aria-controls<br>role="dialog"</p>
 
-      <div role="button" class="btnOpenPopup" aria-controls="thisPopupWrap" aria-haspopup="dialog" @click="popSta">CLICK OPEN POPUP 1234</div>
+      <div role="button" class="btnOpenPopup" aria-controls="thisPopupWrap" aria-haspopup="dialog" @click="popSta">CLICK OPEN POPUP 567890</div>
 
       <div :class="['popup', popupState?'open':'close']">
         <div class="dim" @click="popClose">Close popup when touched</div>
-        <div class="popWrap" id="thisPopupWrap" role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" aria-modal="true">
+        <div class="popWrap" id="thisPopupWrap" role="dialog" aria-modal="true">
           <div class="popHeader" id="dialog1Title" ref="popFocus" tabindex="0">
             POP HEADER
           </div>
@@ -22,7 +22,7 @@
             POPUP CONTENT<br>
             POPUP CONTENT<br>
             POPUP CONTENT
-          </div>
+          </div>a
           <span class="btnClose" role="button" @click="popClose" tabindex="0">close popup</span>
         </div>
       </div>
@@ -46,15 +46,13 @@ import { Component, Vue } from 'vue-property-decorator'
 
 export default class AriaHaspopup extends Vue {
   private popupState = false
-  private preDateHtml = `<div class="btnOpenPopup" role="button" aria-haspopup="true" aria-controls="thisPopup" :aria-expanded="popupState?'true':'false'" @click="popSta">OPEN POPUP BUTTON</div>
-
-<div id="thisPopupWrap" role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" :aria-hidden="popupState?'false':'true'" :class="['popup', popupState?'open':'close']">
+  private preDateHtml = `<div :class="['popup', popupState?'open':'close']">
   <div class="dim" @click="popClose">Close popup when touched</div>
-  <div class="popWrap">
-    <div class="popHeader" id="dialog1Title" role="document" tabindex="0">
+  <div class="popWrap" id="thisPopupWrap" role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" aria-modal="true">
+    <div class="popHeader" id="dialog1Title" ref="popFocus" tabindex="0">
       POP HEADER
     </div>
-    <div class="popContent" id="dialog1Desc">
+    <div class="popContent" id="dialog1Desc" tabindex="0">
       POPUP CONTENT<br>
       POPUP CONTENT<br>
       POPUP CONTENT<br>
@@ -62,12 +60,21 @@ export default class AriaHaspopup extends Vue {
       POPUP CONTENT<br>
       POPUP CONTENT<br>
       POPUP CONTENT
-    </div>
-    <span class="btnClose" role="button" @click="popClose">close popup</span>
+    </div>a
+    <span class="btnClose" role="button" @click="popClose" tabindex="0">close popup</span>
   </div>
 </div>`
-  private preDateJs = `private popSta () {
+  private preDateJs = `public $refs!: {
+  popFocus: HTMLElement;
+}
+
+private popSta () {
   this.popupState = !this.popupState
+  this.$nextTick(() => {
+    if (this.popupState) {
+      this.$refs.popFocus.focus()
+    }
+  })
 }
 
 private popClose () {
@@ -165,6 +172,7 @@ private popClose () {
         text-indent: -1000px;
         font-size: 0;
         line-height: 0;
+        z-index: 93;
         background-image: url('../../assets/images/icon/ico_close_01.png');
         background-size: 100% auto;
         background-position: 0 0;
