@@ -6,7 +6,7 @@
       <p class="otherBlock">Other aria properties</p>
       <p>aria-expanded<br>aria-controls<br>role="dialog"</p>
 
-      <div class="btnOpenPopupWrap" role="button" aria-haspopup="true" aria-controls="thisPopup" :aria-expanded="popupState?'true':'false'" @click="popSta">OPEN POPUP BUTTON</div>
+      <div class="btnOpenPopup" role="button" aria-haspopup="true" aria-controls="thisPopupWrap" :aria-expanded="popupState?'true':'false'" @click="popSta">OPEN POPUP BUTTON</div>
 
       <h4>HTML :</h4>
       <pre>{{ preDateHtml }}</pre>
