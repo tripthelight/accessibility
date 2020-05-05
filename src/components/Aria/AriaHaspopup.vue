@@ -1,13 +1,20 @@
 <template>
   <div class="aria-haspopup">
-    <span class="btnBack" @click="$router.push({ path: 'example' })" role="link">&lt; Go back</span>
-    <h3>aria-haspopup</h3>
-    <p class="otherBlock">Other aria properties</p>
-    <p>aria-expanded<br>aria-controls<br>role="dialog"</p>
+    <div :tabindex="popupState?'-1':'1'">
+      <span class="btnBack" @click="$router.push({ path: 'example' })" role="link">&lt; Go back</span>
+      <h3>aria-haspopup</h3>
+      <p class="otherBlock">Other aria properties</p>
+      <p>aria-expanded<br>aria-controls<br>role="dialog"</p>
 
-    <div class="btnOpenPopup" role="button" aria-haspopup="true" aria-controls="thisPopup" :aria-expanded="popupState?'true':'false'" @click="popSta">OPEN POPUP BUTTON</div>
+      <div class="btnOpenPopupWrap" role="button" aria-haspopup="true" aria-controls="thisPopup" :aria-expanded="popupState?'true':'false'" @click="popSta">OPEN POPUP BUTTON</div>
 
-    <div id="thisPopup" role="dialog" aria-modal="true" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" :aria-hidden="popupState?'true':'false'" tabindex="0" :class="['popup', popupState?'open':'close']">
+      <h4>HTML :</h4>
+      <pre>{{ preDateHtml }}</pre>
+
+      <h4>JS :</h4>
+      <pre>{{ preDateJs }}</pre>
+    </div>
+    <div id="thisPopupWrap" role="dialog" aria-modal="true" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" :aria-hidden="popupState?'true':'false'" tabindex="0" :class="['popup', popupState?'open':'close']">
       <div class="dim" @click="popClose">Close popup when touched</div>
       <div class="popWrap">
         <div class="popHeader" id="dialog1Title">
@@ -25,12 +32,6 @@
         <span class="btnClose" role="button" @click="popClose">close popup</span>
       </div>
     </div>
-
-    <h4>HTML :</h4>
-    <pre>{{ preDateHtml }}</pre>
-
-    <h4>JS :</h4>
-    <pre>{{ preDateJs }}</pre>
   </div>
 </template>
 
