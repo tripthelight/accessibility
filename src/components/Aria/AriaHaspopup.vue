@@ -6,7 +6,7 @@
       <p class="otherBlock">Other aria properties</p>
       <p>aria-expanded<br>aria-controls<br>role="dialog"</p>
 
-      <div role="button" class="btnOpenPopup" @click="popSta">CLICK OPEN POPUP 9999</div>
+      <div role="button" class="btnOpenPopup" @click="popSta">CLICK OPEN POPUP 474747</div>
       <div id="thisPopupWrap" role="dialog" tabindex="0" aria-modal="true" :class="['popup', popupState?'open':'close']">
         <div class="dim" @click="popClose">Close popup when touched</div>
         <div class="popWrap">
@@ -30,7 +30,7 @@
       <pre>{{ preDateHtml }}</pre>
 
       <h4>JS :</h4>
-      <pre>{{ preDateJs }}</pre>
+      <pre>{{ preDateJs }}</pre>a
     </div>
   </div>
 </template>
