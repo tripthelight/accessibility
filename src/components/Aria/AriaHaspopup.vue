@@ -7,14 +7,13 @@
 
     <div class="btnOpenPopup" role="button" aria-haspopup="true" aria-controls="thisPopup" :aria-expanded="popupState?'true':'false'" @click="popSta">OPEN POPUP BUTTON</div>
 
-    <div id="thisPopup" role="dialog" :class="['popup', popupState?'open':'close']">
+    <div id="thisPopup" role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" :class="['popup', popupState?'open':'close']">
       <div class="dim" @click="popClose">Close popup when touched</div>
       <div class="popWrap">
-        <div class="popHeader">
+        <div class="popHeader" id="dialog1Title">
           POP HEADER
-          <span class="btnClose" role="button" @click="popClose">close popup</span>
         </div>
-        <div class="popContent">
+        <div class="popContent" id="">
           POPUP CONTENT<br>
           POPUP CONTENT<br>
           POPUP CONTENT<br>
@@ -23,6 +22,7 @@
           POPUP CONTENT<br>
           POPUP CONTENT
         </div>
+        <span class="btnClose" role="button" @click="popClose">close popup</span>
       </div>
     </div>
 
@@ -46,14 +46,13 @@ export default class AriaHaspopup extends Vue {
   private popupState = false
   private preDateHtml = `<div class="btnOpenPopup" role="button" aria-haspopup="true" aria-controls="thisPopup" :aria-expanded="popupState?'true':'false'" @click="popSta">OPEN POPUP BUTTON</div>
 
-<div id="thisPopup" role="dialog" :class="['popup', popupState?'open':'close']">
+<div id="thisPopup" role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" :class="['popup', popupState?'open':'close']">
   <div class="dim" @click="popClose">Close popup when touched</div>
   <div class="popWrap">
-    <div class="popHeader">
+    <div class="popHeader" id="dialog1Title">
       POP HEADER
-      <span class="btnClose" role="button" @click="popClose">close popup</span>
     </div>
-    <div class="popContent">
+    <div class="popContent" id="">
       POPUP CONTENT<br>
       POPUP CONTENT<br>
       POPUP CONTENT<br>
@@ -62,6 +61,7 @@ export default class AriaHaspopup extends Vue {
       POPUP CONTENT<br>
       POPUP CONTENT
     </div>
+    <span class="btnClose" role="button" @click="popClose">close popup</span>
   </div>
 </div>`
   private preDateJs = `private popSta () {
@@ -130,24 +130,23 @@ private popClose () {
         position: relative;
         padding: 12px;
         box-sizing: border-box;
-        .btnClose {
-          position: absolute;
-          right: 12px;
-          top: 50%;
-          width: 10px;
-          height: 10px;
-          margin: -5px 0 0 0;
-          text-indent: -1000px;
-          font-size: 0;
-          line-height: 0;
-          background-image: url('../../assets/images/icon/ico_close_01.png');
-          background-size: 100% auto;
-          background-position: 0 0;
-          background-repeat: no-repeat;
-        }
       }
       .popContent {
         padding: 10px 12px;
+      }
+      .btnClose {
+        position: absolute;
+        right: 12px;
+        top: 14px;
+        width: 10px;
+        height: 10px;
+        text-indent: -1000px;
+        font-size: 0;
+        line-height: 0;
+        background-image: url('../../assets/images/icon/ico_close_01.png');
+        background-size: 100% auto;
+        background-position: 0 0;
+        background-repeat: no-repeat;
       }
     }
   }
