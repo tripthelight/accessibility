@@ -10,7 +10,7 @@
       <div id="thisPopupWrap" role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" aria-modal="true" :aria-hidden="popupState?'false':'true'" :class="['popup', popupState?'open':'close']">
         <div class="dim" @click="popClose">Close popup when touched</div>
         <div class="popWrap">
-          <div class="popHeader" id="dialog1Title">
+          <div class="popHeader" id="dialog1Title" v-focus>
             POP HEADER
           </div>
           <div class="popContent" id="dialog1Desc">
