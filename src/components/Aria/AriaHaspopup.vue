@@ -7,30 +7,30 @@
       <p>aria-expanded<br>aria-controls<br>role="dialog"</p>
 
       <div class="btnOpenPopup" role="button" aria-haspopup="true" aria-controls="thisPopupWrap" :aria-expanded="popupState?'true':'false'" @click="popSta">OPEN POPUP BUTTON</div>
+      <div id="thisPopupWrap" role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" :aria-hidden="popupState?'false':'true'" :class="['popup', popupState?'open':'close']">
+        <div class="dim" @click="popClose">Close popup when touched</div>
+        <div class="popWrap">
+          <div class="popHeader" id="dialog1Title">
+            POP HEADER
+          </div>
+          <div class="popContent" id="dialog1Desc">
+            POPUP CONTENT<br>
+            POPUP CONTENT<br>
+            POPUP CONTENT<br>
+            POPUP CONTENT<br>
+            POPUP CONTENT<br>
+            POPUP CONTENT<br>
+            POPUP CONTENT
+          </div>
+          <span class="btnClose" role="button" @click="popClose">close popup</span>
+        </div>
+      </div>
 
       <h4>HTML :</h4>
       <pre>{{ preDateHtml }}</pre>
 
       <h4>JS :</h4>
       <pre>{{ preDateJs }}</pre>
-    </div>
-    <div id="thisPopupWrap" role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" :aria-hidden="popupState?'false':'true'" :class="['popup', popupState?'open':'close']">
-      <div class="dim" @click="popClose">Close popup when touched</div>
-      <div class="popWrap">
-        <div class="popHeader" id="dialog1Title">
-          POP HEADER
-        </div>
-        <div class="popContent" id="dialog1Desc">
-          POPUP CONTENT<br>
-          POPUP CONTENT<br>
-          POPUP CONTENT<br>
-          POPUP CONTENT<br>
-          POPUP CONTENT<br>
-          POPUP CONTENT<br>
-          POPUP CONTENT
-        </div>
-        <span class="btnClose" role="button" @click="popClose">close popup</span>
-      </div>
     </div>
   </div>
 </template>
@@ -47,10 +47,10 @@ export default class AriaHaspopup extends Vue {
   private popupState = false
   private preDateHtml = `<div class="btnOpenPopup" role="button" aria-haspopup="true" aria-controls="thisPopup" :aria-expanded="popupState?'true':'false'" @click="popSta">OPEN POPUP BUTTON</div>
 
-<div id="thisPopupWrap" role="dialog" aria-modal="true" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" :aria-hidden="popupState?'false':'true'" :class="['popup', popupState?'open':'close']">
+<div id="thisPopupWrap" role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" :aria-hidden="popupState?'false':'true'" :class="['popup', popupState?'open':'close']">
   <div class="dim" @click="popClose">Close popup when touched</div>
   <div class="popWrap">
-    <div class="popHeader" id="dialog1Title" ref="popupRef">
+    <div class="popHeader" id="dialog1Title" role="document" tabindex="0">
       POP HEADER
     </div>
     <div class="popContent" id="dialog1Desc">
