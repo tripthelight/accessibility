@@ -6,10 +6,11 @@
       <p class="otherBlock">Other aria properties</p>
       <p>aria-expanded<br>aria-controls<br>role="dialog"</p>
 
-      <div role="button" class="btnOpenPopup" aria-controls="thisPopupWrap" aria-haspopup="dialog" @click="popSta">CLICK OPEN POPUP 777777</div>
-      <div id="thisPopupWrap" role="dialog" :class="['popup', popupState?'open':'close']" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc">
+      <div role="button" class="btnOpenPopup" aria-controls="thisPopupWrap" aria-haspopup="dialog" @click="popSta">CLICK OPEN POPUP 1234</div>
+
+      <div :class="['popup', popupState?'open':'close']">
         <div class="dim" @click="popClose">Close popup when touched</div>
-        <div class="popWrap">
+        <div class="popWrap" id="thisPopupWrap" role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" aria-modal="true">
           <div class="popHeader" id="dialog1Title" ref="popFocus" tabindex="0">
             POP HEADER
           </div>
