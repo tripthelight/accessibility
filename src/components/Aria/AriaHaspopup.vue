@@ -6,10 +6,10 @@
       <p class="otherBlock">Other aria properties</p>
       <p>aria-expanded<br>aria-controls<br>role="dialog"</p>
 
-      <div role="button" class="btnOpenPopup" @click="popSta">CLICK OPEN POPUP 9999</div>
-      <div id="thisPopupWrap" role="dialog" aria-modal="true" :class="['popup', popupState?'open':'close']">
+      <div role="button" class="btnOpenPopup" @click="popSta">CLICK OPEN POPUP 7878</div>
+      <div id="thisPopupWrap" role="dialog" :class="['popup', popupState?'open':'close']">
         <div class="dim" @click="popClose">Close popup when touched</div>
-        <div class="popWrap">
+        <div class="popWrap" role="document" tabindex="0"  aria-modal="true">
           <div class="popHeader" id="dialog1Title" ref="popFocus">
             POP HEADER
           </div>
@@ -80,8 +80,10 @@ private popClose () {
   private popSta () {
     this.popupState = !this.popupState
     this.$nextTick(() => {
-      this.$refs.popFocus.focus()
-      this.$refs.popFocus.style.backgroundColor = '#FF0000'
+      if (this.popupState) {
+        this.$refs.popFocus.focus()
+      }
+      // this.$refs.popFocus.style.backgroundColor = '#FF0000'
     })
   }
 
@@ -112,6 +114,12 @@ private popClose () {
     display: none;
     &.open {
       display: block;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 200;
     }
     .dim {
       position: fixed;
@@ -139,6 +147,7 @@ private popClose () {
         position: relative;
         padding: 12px;
         box-sizing: border-box;
+        z-index: 92;
         &:focus {
           border: 1px solid #FF0000;
         }
@@ -185,5 +194,12 @@ private popClose () {
     overflow-x: auto;
     padding: 10px;
   }
+}
+*:focus {
+  border: 1px solid #FFFF00 !important;
+  outline: 1px solid #FF0000 !important;
+}
+* {
+  -webkit-tap-highlight-color: #ff0000 !important;
 }
 </style>
