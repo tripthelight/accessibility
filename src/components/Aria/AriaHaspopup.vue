@@ -14,13 +14,13 @@
       <h4>JS :</h4>
       <pre>{{ preDateJs }}</pre>
     </div>
-    <div id="thisPopupWrap" role="dialog" aria-modal="true" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" :aria-hidden="popupState?'true':'false'" tabindex="0" :class="['popup', popupState?'open':'close']">
+    <div id="thisPopupWrap" role="dialog" aria-modal="true" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" :aria-hidden="popupState?'true':'false'" :class="['popup', popupState?'open':'close']">
       <div class="dim" @click="popClose">Close popup when touched</div>
       <div class="popWrap">
-        <div class="popHeader" id="dialog1Title">
+        <div class="popHeader" id="dialog1Title" tabindex="0">
           POP HEADER
         </div>
-        <div class="popContent" id="">
+        <div class="popContent" id="dialog1Desc">
           POPUP CONTENT<br>
           POPUP CONTENT<br>
           POPUP CONTENT<br>
