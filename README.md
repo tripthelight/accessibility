@@ -3,7 +3,9 @@
 ## url
 [https://tripthelight.github.io/accessibility/](https://tripthelight.github.io/accessibility/)
 ```
-We recommend that you watch it in Chrome Mobile Mode.
+Please check directly with the above path on your smartphone.
+Android: talkBack App
+IOS: VoiceOver
 ```
 
 ## Infomation
